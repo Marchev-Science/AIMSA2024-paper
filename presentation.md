@@ -166,29 +166,29 @@ Threshold : 10 / 7
 
 
 ## Key findings
-**solvability** - NEAT was able to successfully solve the Sokoban problem within 1000 iterations (20 generations), outperforming traditional reinforcement learning (RL) algorithms such as DQN, PPO, and their variants, underscoring Testing the NEAT Algorithm on a PSPACE-Complete Problem without predefined network architecture.
+**solvability** - NEAT was able to successfully solve the Sokoban problem within 1000 iterations (20 generations), outperforming traditional reinforcement learning (RL) algorithms such as DQN, PPO, and their variants, underscoring Testing the NEAT Algorithm on a PSPACE-Complete Problem without predefined network architecture.  
 
-**variations of configurations** - Through various tests with different configuration setups, we found:
-– Customizing Fitness: Customizing the fitness function improved the learning process.
-– Feedforward vs. Recurrent: No significant difference was observed between feedforward and recurrent networks (feedforward=False) for Sokoban during the first 50 generations with a population of 500.
-– Species Influence: The number of species greatly influences behavior:
-  • Higher number of hidden nodes (and layers) proportionally increases the number of species.
-  • More hidden nodes lead to greater diversity and a higher chance of improving fitness scores and finding optimal solutions.
+**variations of configurations** - Through various tests with different configuration setups, we found:  
+– Customizing Fitness: Customizing the fitness function improved the learning process.  
+– Feedforward vs. Recurrent: No significant difference was observed between feedforward and recurrent networks (feedforward=False) for Sokoban during the first 50 generations with a population of 500.  
+– Species Influence: The number of species greatly influences behavior:  
+  • Higher number of hidden nodes (and layers) proportionally increases the number of species.  
+  • More hidden nodes lead to greater diversity and a higher chance of improving fitness scores and finding optimal solutions.  
 
-**software implementation** - critical insights from neat-python library: 
-– Speciation:
-  • Each species is assigned a fitness score, typically the average fitness of its members.
-  • Speciation allows search to proceed in multiple spaces simultaneously.
-  • Without speciation, structural innovations do not survive, and the population quickly converges on initially well-performing topologies.
-– Fitness Sharing: Reduces the fitness of similar individuals within a species to encourage diversity and prevent any single individual from dominating.
-– Selection:
-  • Parents are selected based on their fitness, with fitter individuals having a higher selection probability.
-  • Stochastic Universal Sampling (SUS): Ensures a more even distribution of offspring among individuals according to their fitness.
-  • Neat-python uses a replacement strategy based on stagnation (after certain number of generations) 
-– Mutation:
-  • Direct influence on parameters such as weights, biases, number of nodes, and connections.
-  • Cannot directly influence actions taken at each step (this was additionally implemented by us).
-– Technical limitations: Scaling the solution is limited to CPU optimizations due to the nature of the neat-python and gym-sokoban libraries.
+**software implementation** - critical insights from neat-python library:   
+– Speciation:  
+  • Each species is assigned a fitness score, typically the average fitness of its members.  
+  • Speciation allows search to proceed in multiple spaces simultaneously.  
+  • Without speciation, structural innovations do not survive, and the population quickly converges on initially well-performing topologies.  
+– Fitness Sharing: Reduces the fitness of similar individuals within a species to encourage diversity and prevent any single individual from dominating.  
+– Selection:  
+  • Parents are selected based on their fitness, with fitter individuals having a higher selection probability.  
+  • Stochastic Universal Sampling (SUS): Ensures a more even distribution of offspring among individuals according to their fitness.  
+  • Neat-python uses a replacement strategy based on stagnation (after certain number of generations)  
+– Mutation:  
+  • Direct influence on parameters such as weights, biases, number of nodes, and connections.  
+  • Cannot directly influence actions taken at each step (this was additionally implemented by us).  
+– Technical limitations: Scaling the solution is limited to CPU optimizations due to the nature of the neat-python and gym-sokoban libraries.  
 
 **Future work** - Future goals for this research include exploring custom neuro-evolutionary architecture search, which involves developing different genome structures and initialization methods. Additionally, improving the crossover mechanisms and initial hyperparameter optimization are key areas of focus.
 
@@ -210,6 +210,9 @@ Threshold : 10 / 7
 
 ## The Solutions
 
+![](/images/q-learn.gif)
 
+
+![](/images/NEAT_easy_solved.gif)
 
 
