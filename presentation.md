@@ -290,9 +290,9 @@ Threshold : 10 / 7
 
 ## The Solutions
 
-![](/img/Q-Learn.gif)
+![](/img/solution_1.gif)
 
 
-![](/img/NEAT_easy_solved.gif)
+![](/img/solution_2.gif)
 
 
