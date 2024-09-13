@@ -36,3 +36,16 @@ NEAT implementation
 - configurations (parameters)
 - reward schedule
 
+*Experiment design table
+
+*Experiment result table
+
+*Key findings
+- solvability
+- variations of configurations
+- software implementation
+- future work
+
+*references
+
+*illustrations
