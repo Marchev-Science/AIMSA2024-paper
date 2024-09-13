@@ -69,7 +69,7 @@ end
 ```
 Fig. 1: Flowchart of the principal process of Reinforcement learning
 
-RL models used as baselines
+## RL models used as baselines
 **Q-learning** - is a value-based off-policy RL algorithm that aims to learn the value of the optimal policy independently of the agent’s actions. It updates the Q-values (quality of actions) iteratively using the Bellman equation:
 
 $Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_a Q(s', a') - Q(s, a)]$
@@ -87,7 +87,7 @@ where rt(θ) is the probability ratio and At is the advantage estimate.
 
 **Proximal Policy Optimization with Convolutional Neural Networks (PPO CNN)** is a variant of PPO that incorporates CNNs to extract features from high-dimensional input spaces, such as images. This is particularly useful for tasks involving visual data, where CNNs can effectively capture spatial hierarchies in the input.
 
-NEAT (Stanley, Miikkulainen, 2002)
+## NEAT (Stanley, Miikkulainen, 2002)
 **NeuroEvolution of Augmenting Topologies (NEAT)** evolves both neural network topologies and weights. NEAT enhances neuroevolution by optimizing and complexifying solutions incrementally. Each component (historical markings, speciation, minimal initial structure) is critical for efficient evolution, making NEAT a powerful approach for complex reinforcement learning tasks.
 
 **genetic encoding** - Each genome in NEAT consists of a list of connection genes and node genes; 
@@ -129,24 +129,53 @@ Speciation Parameters
 Stagnation Parameters
 Reproduction Parameters
 
-- reward schedule
+**Reward schedule**
 
-Reason
-Reward
-Perform Step
--0.1
-Push Box on Target
-1.0
-Push Box off Target
--1.0
-Push all boxes on targets
-10.0
-
+| Reason                	| Reward |
+| ------------------------- | ----:  |
+| Perform Step          	| -0.1   |
+| Push Box on Target    	|  1.0   |
+| Push Box off Target   	| -1.0   |
+| Push all boxes on targets | 10.0   |
 
 Threshold : 10 / 7
 
 
 ## Experiment design table
+
+\begin{table}[H]
+\caption{Configurations for NEAT experiments}\label{exper_tabl}
+\centering
+\begin{tabular}{|l|lll|lll|}
+\hline
+ & \multicolumn{3}{l|}{Experimental set 1} & \multicolumn{3}{l|}{Experimental set 2} \\ \cline{2-7}
+\multirow{-2}{*}{parameter} & {\color[HTML]{1F2328} config-1} & {\color[HTML]{1F2328} config-2} & {\color[HTML]{1F2328} config-3} & {\color[HTML]{1F2328} config-4} & {\color[HTML]{1F2328} config-5} & {\color[HTML]{1F2328} config-6} \\ \hline
+fitness\_threshold & 10 & 10 & 10 & 7 & 7 & 7 \\ \hline
+pop\_size & \cellcolor[HTML]{DAE9F8}1000 & \cellcolor[HTML]{DAE9F8}500 & \cellcolor[HTML]{DAE9F8}200 & 500 & 500 & 500 \\ \hline
+activation\_default & sigmoid & sigmoid & \cellcolor[HTML]{FFFF00}relu & sigmoid & sigmoid & sigmoid \\ \hline
+activation\_mutate\_rate & \cellcolor[HTML]{FFFF00}0.05 & 0.1 & 0.1 & 0.03 & 0.03 & 0.03 \\ \hline
+aggregation\_mutate\_rate & \cellcolor[HTML]{FFFF00}0 & 0.1 & 0.1 & 0 & 0 & 0 \\ \hline
+bias\_mutate\_power & \cellcolor[HTML]{FFFF00}0.5 & 1 & 1 & 0.88 & 0.88 & 0.88 \\ \hline
+bias\_mutate\_rate & 0.7 & 0.7 & 0.7 & 0.7 & 0.3 & 0.7 \\ \hline
+conn\_add\_prob & \cellcolor[HTML]{FFFF00}0.5 & 0.7 & 0.7 & 0.7 & 0.3 & 0.7 \\ \hline
+conn\_delete\_prob & \cellcolor[HTML]{FFFF00}0.5 & 0.2 & 0.2 & 0.4 & \cellcolor[HTML]{FFFF00}0.15 & 0.4 \\ \hline
+enabled\_mutate\_rate & \cellcolor[HTML]{FFFF00}0.01 & 0.05 & 0.05 & 0.01 & 0.01 & 0.01 \\ \hline
+feed\_forward & 1 & 1 & 1 & 1 & \cellcolor[HTML]{FFFF00}0 & 1 \\ \hline
+node\_add\_prob & \cellcolor[HTML]{FFFF00}0.3 & 0.5 & 0.5 & \cellcolor[HTML]{DAE9F8}0.5 & \cellcolor[HTML]{DAE9F8}0.3 & \cellcolor[HTML]{DAE9F8}0.6 \\ \hline
+node\_delete\_prob & \cellcolor[HTML]{FFFF00}0.15 & 0.2 & 0.2 & 0.3 & \cellcolor[HTML]{FFFF00}0.15 & 0.3 \\ \hline
+num\_hidden & \cellcolor[HTML]{DAE9F8}1 & \cellcolor[HTML]{DAE9F8}2 & \cellcolor[HTML]{DAE9F8}0 & 0 & 0 & 0 \\ \hline
+response\_mutate\_power & \cellcolor[HTML]{FFFF00}0 & 1 & 1 & 0.88 & 0.88 & 0.88 \\ \hline
+response\_mutate\_rate & \cellcolor[HTML]{FFFF00}0 & 0.7 & 0.7 & 0.7 & 0.7 & 0.7 \\ \hline
+response\_replace\_rate & \cellcolor[HTML]{FFFF00}0 & 0.1 & 0.1 & \cellcolor[HTML]{FFFF00}0.1 & 0.3 & 0.3 \\ \hline
+weight\_mutate\_power & \cellcolor[HTML]{FFFF00}0.5 & 1 & 1 & 0.88 & 0.88 & 0.88 \\ \hline
+weight\_mutate\_rate & 0.8 & 0.8 & 0.8 & 0.8 & \cellcolor[HTML]{FFFF00}0.4 & 0.8 \\ \hline
+weight\_replace\_rate & 0.1 & 0.1 & 0.1 & 0.1 & 0.1 & \cellcolor[HTML]{FFFF00}0.3 \\ \hline
+compatibility\_threshold & \cellcolor[HTML]{FFFF00}3 & 2 & 2 & 2 & \cellcolor[HTML]{FFFF00}2.5 & 2 \\ \hline
+max\_stagnation & \cellcolor[HTML]{FFFF00}20 & 10 & 10 & 10 & \cellcolor[HTML]{FFFF00}15 & 10 \\ \hline
+species\_elitism & \cellcolor[HTML]{DAE9F8}2 & \cellcolor[HTML]{DAE9F8}1 & \cellcolor[HTML]{DAE9F8}2 & 2 & 2 & 2 \\ \hline
+elitism & 2 & \cellcolor[HTML]{FFFF00}1 & 5 & 2 & 2 & 2 \\ \hline
+\end{tabular}%
+\end{table}
 
 
 ## Experiment result table
