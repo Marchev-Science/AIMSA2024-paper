@@ -78,7 +78,7 @@ NEAT (Stanley, Miikkulainen, 2002)
 
 
 ## NEAT Flowchart
-```mermeid
+```mermaid
 graph TD
     A([Start with minimal network structure]) 
     B[Initialize population]
