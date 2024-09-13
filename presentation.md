@@ -78,7 +78,25 @@ NEAT (Stanley, Miikkulainen, 2002)
 
 
 ## NEAT Flowchart
+```mermeid
+graph TD
+    A([Start with minimal network structure]) 
+    B[Initialize population]
+    C[Evaluate fitness of each network]
+    D{Terminate?}
+    E[Speciation]
+    F[Selection]
+    G[Reproduction]
+    H{Mutation?}
+    I[Add connection or node]
+    J[Perform crossover]
+    K[New generation]
+    L([Best network found])
 
+    H -- No --> J
+    D -- Yes --> L
+    A --> B --> C --> D -- No --> E --> F --> G --> H -- Yes --> I --> J --> K --> C
+```
 
 
 ## NEAT implementation
