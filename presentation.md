@@ -81,6 +81,8 @@ where α is the learning rate, γ is the discount factor, r is the reward, and s
 
 **Proximal Policy Optimization (PPO)** is a policy gradient method that aims to balance exploration and exploitation. It optimizes a surrogate objective function while ensuring that the new policy is not too far from the old policy to maintain stable learning:
 
+$L^{\text{CLIP}}(\theta) = \mathbb{E}_t \left[ \min (r_t(\theta) \hat{A}_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) \hat{A}_t) \right]$
+
 where rt(θ) is the probability ratio and At is the advantage estimate.	
 
 **Proximal Policy Optimization with Convolutional Neural Networks (PPO CNN)** is a variant of PPO that incorporates CNNs to extract features from high-dimensional input spaces, such as images. This is particularly useful for tasks involving visual data, where CNNs can effectively capture spatial hierarchies in the input.
