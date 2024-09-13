@@ -143,11 +143,27 @@ Threshold : 10 / 7
 
 ## Experiment design table
 
-()[/img/table_1.png]
+![](/img/table_1.png)
+
+
+
 
 ## Experiment result table
 
-()[/img/table_2.png]
+| algo | variant  | iters | success | time/iter |
+|------|----------|-------|---------|-----------|
+| RL   | DQN  	| 5000  | No  	| 45    	|
+| RL   | PPO  	| 5000  | No  	| 26    	|
+| RL   | PPO opt  | 5000  | No  	| 29    	|
+| RL   | PPO CNN  | 5000  | No  	| 27    	|
+| RL   | Q-learn  | 1000  | Yes 	| 23    	|
+| NEAT | config 1 | 1000  | Yes 	| 11    	|
+| NEAT | config 2 | 1000  | No  	| 14    	|
+| NEAT | config 3 | 1000  | No  	| 13    	|
+| NEAT | config 4 | 1000  | No  	| 15    	|
+| NEAT | config 5 | 1000  | No  	| 16    	|
+| NEAT | config 6 | 1000  | No  	| 17    	|
+
 
 ## Key findings
 **solvability** - NEAT was able to successfully solve the Sokoban problem within 1000 iterations (20 generations), outperforming traditional reinforcement learning (RL) algorithms such as DQN, PPO, and their variants, underscoring Testing the NEAT Algorithm on a PSPACE-Complete Problem without predefined network architecture.
