@@ -1,12 +1,17 @@
 # Testing the NEAT Algorithm on a PSPACE-Complete Problem  
 
 **Angel Marchev Jr.**, **Dimitar Lyubchev** and **Nikolay Penchev**  
-
+<br>
+<br>
+<br>
 
   
 *Acknowledgements - This work was financially supported by the UNWE Research Programme.*  
-  
-
+<br>
+<br>
+<br>
+<br>
+<br>
 
   
 ## Problem statement  
@@ -15,6 +20,11 @@
 **Main objective:** Investigate the NEAT’s efficacy on a PSPACE-complete problem  
   
 **Secondary objective:** study some of the characteristics and variations of the derived solution  
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 ## Methodology for testing  
@@ -28,6 +38,11 @@
 **variations** - To thoroughly explore NEAT’s potential, we tested a wide range of configuration Variations: Initial Number of Nodes; Fitness Function Adaptation; Population Size and Generations; Mutation Rates; Training Environments; Network Types
  
 **comparison** - The final step involved comparing the performance of NEAT against the baseline RL models. Key metrics included the number of iterations required to achieve success, the success rate, and the time per iteration.
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ## Sokoban problem definition
 **Concept of zero-player games** - the agent (algorithm) interacts with the environment without human intervention.  
@@ -45,6 +60,11 @@
 
 - Sokoban is P-space complete (Culberson, 1997; Hearn, 2006) - it can be solved using a memory amount that scales polynomially with the input length (polynomial space) - solving it would facilitate solving any other problem in PSPACE with relative ease
 
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 ## Reinforcement Learning 
@@ -74,6 +94,11 @@ D["RL Algorithm"]
 end
 ```
 Fig. 1: Flowchart of the principal process of Reinforcement learning
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ## RL models used as baselines
 **Q-learning** - is a value-based off-policy RL algorithm that aims to learn the value of the optimal policy independently of the agent’s actions. It updates the Q-values (quality of actions) iteratively using the Bellman equation:
@@ -92,14 +117,28 @@ $L^{\text{CLIP}}(\theta) = \mathbb{E}_t \left[ \min (r_t(\theta) \hat{A}_t, \tex
 where rt(θ) is the probability ratio and At is the advantage estimate.	
 
 **Proximal Policy Optimization with Convolutional Neural Networks (PPO CNN)** is a variant of PPO that incorporates CNNs to extract features from high-dimensional input spaces, such as images. This is particularly useful for tasks involving visual data, where CNNs can effectively capture spatial hierarchies in the input.
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ## NEAT (Stanley, Miikkulainen, 2002)
 **NeuroEvolution of Augmenting Topologies (NEAT)** evolves both neural network topologies and weights. NEAT enhances neuroevolution by optimizing and complexifying solutions incrementally. Each component (historical markings, speciation, minimal initial structure) is critical for efficient evolution, making NEAT a powerful approach for complex reinforcement learning tasks.
 
 **genetic encoding** - Each genome in NEAT consists of a list of connection genes and node genes; 
-**historical markings** - To perform crossover between diverse genomes, NEAT uses historical markings. Each new gene created by mutation is assigned a unique innovation number, which helps identify and match genes from different genomes, This avoids the problem of competing conventions and simplifies the crossover process.
-**speciation/innovation trade-off** - NEAT speciation protects structural innovations by allowing them to optimize without direct competition. Genomes are divided into species based on compatibility distance, ensuring diversity. Fitness sharing adjusts individual fitness by the number of species members, promoting niche preservation.
-**minimizing dimensionality** - starts with a minimal structure (no-hidden nodes) and grows only necessary structures through mutations.
+
+**historical markings** - To perform crossover between diverse genomes, NEAT uses historical markings. Each new gene created by mutation is assigned a unique innovation number, which helps identify and match genes from different genomes, This avoids the problem of competing conventions and simplifies the crossover process.  
+
+**speciation/innovation trade-off** - NEAT speciation protects structural innovations by allowing them to optimize without direct competition. Genomes are divided into species based on compatibility distance, ensuring diversity. Fitness sharing adjusts individual fitness by the number of species members, promoting niche preservation.  
+
+**minimizing dimensionality** - starts with a minimal structure (no-hidden nodes) and grows only necessary structures through mutations.  
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
 
 
@@ -124,9 +163,14 @@ graph TD
     A --> B --> C --> D -- No --> E --> F --> G --> H -- Yes --> I --> J --> K --> C
 ```
 
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ## NEAT implementation
-**current encoding**
+**Current encoding**
 
 ![](/img/Fig_2.png)
 
@@ -147,6 +191,11 @@ Reproduction Parameters
 | Push all boxes on targets | 10.0   |
 
 Threshold : 10 / 7
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 ## Experiment design table
@@ -154,6 +203,11 @@ Threshold : 10 / 7
 ![](/img/table_1.png)
 
 
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 ## Experiment result table
@@ -172,6 +226,11 @@ Threshold : 10 / 7
 | NEAT | config 5 | 1000  | No  	| 16    	|
 | NEAT | config 6 | 1000  | No  	| 17    	|
 
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ## Key findings
 **solvability** - NEAT was able to successfully solve the Sokoban problem within 1000 iterations (20 generations), outperforming traditional reinforcement learning (RL) algorithms such as DQN, PPO, and their variants, underscoring Testing the NEAT Algorithm on a PSPACE-Complete Problem without predefined network architecture.  
@@ -202,6 +261,11 @@ Threshold : 10 / 7
 – Technical limitations: Scaling the solution is limited to CPU optimizations due to the nature of the neat-python and gym-sokoban libraries.  
 
 **Future work** - Future goals for this research include exploring custom neuro-evolutionary architecture search, which involves developing different genome structures and initialization methods. Additionally, improving the crossover mechanisms and initial hyperparameter optimization are key areas of focus.
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ## References
 1. Stanley, K.O., Miikkulainen, R.: Efficient evolution of neural network topologies. In: Proceedings of the 2002 Congress on Evolutionary Computation. CEC’02 (Cat. No.02TH8600), vol. 2, pp. 1757–1762. IEEE, Honolulu (2002). https://doi.org/10.1109/CEC.2002.1004508
@@ -218,6 +282,11 @@ Threshold : 10 / 7
 12. Junghanns, A., Schaeffer, J.: Sokoban: Enhancing general single-agent search methods using domain knowledge. Artificial Intelligence 129(1-2), 219–251 (2001). https://doi.org/10.1016/S0004-3702(01)00109-6
 13. Shoham, Y., Schaeffer, J.: The FESS Algorithm: A Feature Based Approach to Single-Agent Search. In: 2020 IEEE Conference on Games (CoG), pp. 1–8. IEEE, Osaka (2020). https://doi.org/10.1109/CoG47356.2020.9231929
 14. Damgaard, B. (2024, June 4). Open Test Suite - Numbers. Sokoban Solver Statistics. Retrieved from https://sokoban-solver-statistics.sourceforge.io/statistics/OpenTestSuite/Numbers.html
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ## The Solutions
 
