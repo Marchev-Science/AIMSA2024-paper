@@ -42,20 +42,24 @@ Angel Marchev Jr., Dimitar Lyubchev and Nikolay Penchev
 
 
 ## Reinforcement Learning 
-**Concept** - a type of machine learning where an agent learns to make decisions by taking actions in an environment to maximize cumulative rewards. Key components of RL include the agent, environment, states, actions, rewards, and policy.
-– Agent: The learner or decision maker.
-– Environment: Everything the agent interacts with.
-– State St at time t: A representation of the current situation of the environment
-– Action at at time t: A set of all possible moves the agent can make.
-– Reward Rt at time t: Feedback from the environment to evaluate the action taken.
-– Policy πθ parameterized by θ: The strategy that the agent employs to determine actions based on the current state.
-– Policy update process πθ(St) -> πθ(St + 1) from state St to St + 1: The implemented change in the policy reflecting the previous states and rewards.
+**Concept** - a type of machine learning where an agent learns to make decisions by taking actions in an environment to maximize cumulative rewards. Key components of RL include the agent, environment, states, actions, rewards, and policy.  
+– Agent: The learner or decision maker.  
+– Environment: Everything the agent interacts with.  
+– State St at time t: A representation of the current situation of the environment  
+– Action at at time t: A set of all possible moves the agent can make.  
+– Reward Rt at time t: Feedback from the environment to evaluate the action taken.  
+– Policy πθ parameterized by θ: The strategy that the agent employs to determine actions based on the current state.  
+– Policy update process πθ(St) -> πθ(St + 1) from state St to St + 1: The implemented change in the policy reflecting the previous states and rewards.  
 
 
 	Fig. 1: Flowchart of the principal process of Reinforcement learning
 
 RL models used as baselines
 **Q-learning** - is a value-based off-policy RL algorithm that aims to learn the value of the optimal policy independently of the agent’s actions. It updates the Q-values (quality of actions) iteratively using the Bellman equation:
+\begin{equation}
+Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_a Q(s', a') - Q(s, a)]
+\end{equation}
+
 
 where α is the learning rate, γ is the discount factor, r is the reward, and s’ and a’ are the next state and action.
 
