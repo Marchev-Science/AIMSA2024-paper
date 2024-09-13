@@ -56,9 +56,8 @@ Angel Marchev Jr., Dimitar Lyubchev and Nikolay Penchev
 
 RL models used as baselines
 **Q-learning** - is a value-based off-policy RL algorithm that aims to learn the value of the optimal policy independently of the agent’s actions. It updates the Q-values (quality of actions) iteratively using the Bellman equation:
-\begin{equation}
-Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_a Q(s', a') - Q(s, a)]
-\end{equation}
+
+$Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_a Q(s', a') - Q(s, a)]$
 
 
 where α is the learning rate, γ is the discount factor, r is the reward, and s’ and a’ are the next state and action.
