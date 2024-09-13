@@ -128,7 +128,7 @@ graph TD
 ## NEAT implementation
 **current encoding**
 
-![](/img/Fig_2)
+![](/img/Fig_2.png)
 
 **each NEAT configuration** file involves parameters, grouped into several categories:
 Algorithm (Hyper-) Parameters
@@ -183,7 +183,7 @@ Threshold : 10 / 7
   • Higher number of hidden nodes (and layers) proportionally increases the number of species.  
   • More hidden nodes lead to greater diversity and a higher chance of improving fitness scores and finding optimal solutions.  
 
-![](/img/fig_5)
+![](/img/fig_5.png)
 
 
 **software implementation** - critical insights from neat-python library:   
@@ -221,9 +221,9 @@ Threshold : 10 / 7
 
 ## The Solutions
 
-![](/images/q-learn.gif)
+![](/img/Q-Learn.gif)
 
 
-![](/images/NEAT_easy_solved.gif)
+![](/img/NEAT_easy_solved.gif)
 
 
