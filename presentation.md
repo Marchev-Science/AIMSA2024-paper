@@ -51,8 +51,23 @@ Angel Marchev Jr., Dimitar Lyubchev and Nikolay Penchev
 – Policy πθ parameterized by θ: The strategy that the agent employs to determine actions based on the current state.  
 – Policy update process πθ(St) -> πθ(St + 1) from state St to St + 1: The implemented change in the policy reflecting the previous states and rewards.  
 
+```mermaid
+%%{init: {"flowchart": {"defaultRenderer": "elk"}} }%%
+flowchart LR
+E --Reward R<sub>t</sub>--> D
+E --State s<sub>t</sub>--> D
+E --State s<sub>t</sub>--> C
+C --Action a<sub>t</sub>--> E
+C --Action a<sub>t</sub>--> D
+D --Update &pi;<sub>&theta;</sub>(s<sub>t</sub>) &rarr; &pi;<sub>&theta;</sub>(s<sub>t+1</sub>)--> C
 
-	Fig. 1: Flowchart of the principal process of Reinforcement learning
+E["Environment"]
+subgraph F["Agent"]
+C["Policy &pi;<sub>&theta;</sub>"]
+D["RL Algorithm"]
+end
+```
+Fig. 1: Flowchart of the principal process of Reinforcement learning
 
 RL models used as baselines
 **Q-learning** - is a value-based off-policy RL algorithm that aims to learn the value of the optimal policy independently of the agent’s actions. It updates the Q-values (quality of actions) iteratively using the Bellman equation:
