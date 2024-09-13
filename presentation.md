@@ -143,43 +143,11 @@ Threshold : 10 / 7
 
 ## Experiment design table
 
-\begin{table}[H]
-\caption{Configurations for NEAT experiments}\label{exper_tabl}
-\centering
-\begin{tabular}{|l|lll|lll|}
-\hline
- & \multicolumn{3}{l|}{Experimental set 1} & \multicolumn{3}{l|}{Experimental set 2} \\ \cline{2-7}
-\multirow{-2}{*}{parameter} & {\color[HTML]{1F2328} config-1} & {\color[HTML]{1F2328} config-2} & {\color[HTML]{1F2328} config-3} & {\color[HTML]{1F2328} config-4} & {\color[HTML]{1F2328} config-5} & {\color[HTML]{1F2328} config-6} \\ \hline
-fitness\_threshold & 10 & 10 & 10 & 7 & 7 & 7 \\ \hline
-pop\_size & \cellcolor[HTML]{DAE9F8}1000 & \cellcolor[HTML]{DAE9F8}500 & \cellcolor[HTML]{DAE9F8}200 & 500 & 500 & 500 \\ \hline
-activation\_default & sigmoid & sigmoid & \cellcolor[HTML]{FFFF00}relu & sigmoid & sigmoid & sigmoid \\ \hline
-activation\_mutate\_rate & \cellcolor[HTML]{FFFF00}0.05 & 0.1 & 0.1 & 0.03 & 0.03 & 0.03 \\ \hline
-aggregation\_mutate\_rate & \cellcolor[HTML]{FFFF00}0 & 0.1 & 0.1 & 0 & 0 & 0 \\ \hline
-bias\_mutate\_power & \cellcolor[HTML]{FFFF00}0.5 & 1 & 1 & 0.88 & 0.88 & 0.88 \\ \hline
-bias\_mutate\_rate & 0.7 & 0.7 & 0.7 & 0.7 & 0.3 & 0.7 \\ \hline
-conn\_add\_prob & \cellcolor[HTML]{FFFF00}0.5 & 0.7 & 0.7 & 0.7 & 0.3 & 0.7 \\ \hline
-conn\_delete\_prob & \cellcolor[HTML]{FFFF00}0.5 & 0.2 & 0.2 & 0.4 & \cellcolor[HTML]{FFFF00}0.15 & 0.4 \\ \hline
-enabled\_mutate\_rate & \cellcolor[HTML]{FFFF00}0.01 & 0.05 & 0.05 & 0.01 & 0.01 & 0.01 \\ \hline
-feed\_forward & 1 & 1 & 1 & 1 & \cellcolor[HTML]{FFFF00}0 & 1 \\ \hline
-node\_add\_prob & \cellcolor[HTML]{FFFF00}0.3 & 0.5 & 0.5 & \cellcolor[HTML]{DAE9F8}0.5 & \cellcolor[HTML]{DAE9F8}0.3 & \cellcolor[HTML]{DAE9F8}0.6 \\ \hline
-node\_delete\_prob & \cellcolor[HTML]{FFFF00}0.15 & 0.2 & 0.2 & 0.3 & \cellcolor[HTML]{FFFF00}0.15 & 0.3 \\ \hline
-num\_hidden & \cellcolor[HTML]{DAE9F8}1 & \cellcolor[HTML]{DAE9F8}2 & \cellcolor[HTML]{DAE9F8}0 & 0 & 0 & 0 \\ \hline
-response\_mutate\_power & \cellcolor[HTML]{FFFF00}0 & 1 & 1 & 0.88 & 0.88 & 0.88 \\ \hline
-response\_mutate\_rate & \cellcolor[HTML]{FFFF00}0 & 0.7 & 0.7 & 0.7 & 0.7 & 0.7 \\ \hline
-response\_replace\_rate & \cellcolor[HTML]{FFFF00}0 & 0.1 & 0.1 & \cellcolor[HTML]{FFFF00}0.1 & 0.3 & 0.3 \\ \hline
-weight\_mutate\_power & \cellcolor[HTML]{FFFF00}0.5 & 1 & 1 & 0.88 & 0.88 & 0.88 \\ \hline
-weight\_mutate\_rate & 0.8 & 0.8 & 0.8 & 0.8 & \cellcolor[HTML]{FFFF00}0.4 & 0.8 \\ \hline
-weight\_replace\_rate & 0.1 & 0.1 & 0.1 & 0.1 & 0.1 & \cellcolor[HTML]{FFFF00}0.3 \\ \hline
-compatibility\_threshold & \cellcolor[HTML]{FFFF00}3 & 2 & 2 & 2 & \cellcolor[HTML]{FFFF00}2.5 & 2 \\ \hline
-max\_stagnation & \cellcolor[HTML]{FFFF00}20 & 10 & 10 & 10 & \cellcolor[HTML]{FFFF00}15 & 10 \\ \hline
-species\_elitism & \cellcolor[HTML]{DAE9F8}2 & \cellcolor[HTML]{DAE9F8}1 & \cellcolor[HTML]{DAE9F8}2 & 2 & 2 & 2 \\ \hline
-elitism & 2 & \cellcolor[HTML]{FFFF00}1 & 5 & 2 & 2 & 2 \\ \hline
-\end{tabular}%
-\end{table}
-
+()[/img/table_1.png]
 
 ## Experiment result table
 
+()[/img/table_2.png]
 
 ## Key findings
 **solvability** - NEAT was able to successfully solve the Sokoban problem within 1000 iterations (20 generations), outperforming traditional reinforcement learning (RL) algorithms such as DQN, PPO, and their variants, underscoring Testing the NEAT Algorithm on a PSPACE-Complete Problem without predefined network architecture.
