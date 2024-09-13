@@ -177,9 +177,9 @@ graph TD
 **each NEAT configuration** file involves parameters, grouped into several categories:
 - Algorithm (Hyper-) Parameters  
 - Genome Parameters  
--  Speciation Parameters  
--  Stagnation Parameters  
--  Reproduction Parameters  
+- Speciation Parameters  
+- Stagnation Parameters  
+- Reproduction Parameters  
 
 **Reward schedule**
 
@@ -236,11 +236,11 @@ Threshold : 10 / 7
 **solvability** - NEAT was able to successfully solve the Sokoban problem within 1000 iterations (20 generations), outperforming traditional reinforcement learning (RL) algorithms such as DQN, PPO, and their variants, underscoring Testing the NEAT Algorithm on a PSPACE-Complete Problem without predefined network architecture.  
 
 **variations of configurations** - Through various tests with different configuration setups, we found:  
-– Customizing Fitness: Customizing the fitness function improved the learning process.  
-– Feedforward vs. Recurrent: No significant difference was observed between feedforward and recurrent networks (feedforward=False) for Sokoban during the first 50 generations with a population of 500.  
-– Species Influence: The number of species greatly influences behavior:  
-  • Higher number of hidden nodes (and layers) proportionally increases the number of species.  
-  • More hidden nodes lead to greater diversity and a higher chance of improving fitness scores and finding optimal solutions.  
+- Customizing Fitness: Customizing the fitness function improved the learning process.  
+- Feedforward vs. Recurrent: No significant difference was observed between feedforward and recurrent networks (feedforward=False) for Sokoban during the first 50 generations with a population of 500.  
+- Species Influence: The number of species greatly influences behavior:  
+  - Higher number of hidden nodes (and layers) proportionally increases the number of species.  
+  - More hidden nodes lead to greater diversity and a higher chance of improving fitness scores and finding optimal solutions.  
 
 ![](/img/fig_5.png)
 
