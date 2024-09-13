@@ -175,11 +175,11 @@ graph TD
 ![](/img/Fig_2.png)
 
 **each NEAT configuration** file involves parameters, grouped into several categories:
-Algorithm (Hyper-) Parameters
-Genome Parameters
-Speciation Parameters
-Stagnation Parameters
-Reproduction Parameters
+- Algorithm (Hyper-) Parameters  
+- Genome Parameters  
+-  Speciation Parameters  
+-  Stagnation Parameters  
+-  Reproduction Parameters  
 
 **Reward schedule**
 
@@ -246,19 +246,19 @@ Threshold : 10 / 7
 
 
 **software implementation** - critical insights from neat-python library:   
-– Speciation:  
-  • Each species is assigned a fitness score, typically the average fitness of its members.  
-  • Speciation allows search to proceed in multiple spaces simultaneously.  
-  • Without speciation, structural innovations do not survive, and the population quickly converges on initially well-performing topologies.  
-– Fitness Sharing: Reduces the fitness of similar individuals within a species to encourage diversity and prevent any single individual from dominating.  
-– Selection:  
-  • Parents are selected based on their fitness, with fitter individuals having a higher selection probability.  
-  • Stochastic Universal Sampling (SUS): Ensures a more even distribution of offspring among individuals according to their fitness.  
-  • Neat-python uses a replacement strategy based on stagnation (after certain number of generations)  
-– Mutation:  
-  • Direct influence on parameters such as weights, biases, number of nodes, and connections.  
-  • Cannot directly influence actions taken at each step (this was additionally implemented by us).  
-– Technical limitations: Scaling the solution is limited to CPU optimizations due to the nature of the neat-python and gym-sokoban libraries.  
+- Speciation:  
+  - Each species is assigned a fitness score, typically the average fitness of its members.  
+  - Speciation allows search to proceed in multiple spaces simultaneously.  
+  - Without speciation, structural innovations do not survive, and the population quickly converges on initially well-performing topologies.  
+- Fitness Sharing: Reduces the fitness of similar individuals within a species to encourage diversity and prevent any single individual from dominating.  
+- Selection:  
+  - Parents are selected based on their fitness, with fitter individuals having a higher selection probability.  
+  - Stochastic Universal Sampling (SUS): Ensures a more even distribution of offspring among individuals according to their fitness.  
+  - Neat-python uses a replacement strategy based on stagnation (after certain number of generations)  
+- Mutation:  
+  - Direct influence on parameters such as weights, biases, number of nodes, and connections.  
+  - Cannot directly influence actions taken at each step (this was additionally implemented by us).  
+- Technical limitations: Scaling the solution is limited to CPU optimizations due to the nature of the neat-python and gym-sokoban libraries.  
 
 **Future work** - Future goals for this research include exploring custom neuro-evolutionary architecture search, which involves developing different genome structures and initialization methods. Additionally, improving the crossover mechanisms and initial hyperparameter optimization are key areas of focus.
 <br>
