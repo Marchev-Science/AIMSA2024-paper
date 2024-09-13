@@ -1,8 +1,13 @@
 # Testing the NEAT Algorithm on a PSPACE-Complete Problem  
-Angel Marchev Jr., Dimitar Lyubchev and Nikolay Penchev  
+
+**Angel Marchev Jr.**, **Dimitar Lyubchev** and **Nikolay Penchev**  
+
+
   
 *Acknowledgements - This work was financially supported by the UNWE Research Programme.*  
   
+
+
   
 ## Problem statement  
 **Preamble:** stress on the need for architecture-independent methods by focusing in this paper on the NEAT (Neuro-Evolution of Augmenting Topologies) algorithm, as proposed by Stanley and Miikkulainen (2002)  
@@ -25,7 +30,8 @@ Angel Marchev Jr., Dimitar Lyubchev and Nikolay Penchev
 **comparison** - The final step involved comparing the performance of NEAT against the baseline RL models. Key metrics included the number of iterations required to achieve success, the success rate, and the time per iteration.
 
 ## Sokoban problem definition
-**Concept of zero-player games** - the agent (algorithm) interacts with the environment without human intervention.
+**Concept of zero-player games** - the agent (algorithm) interacts with the environment without human intervention.  
+
 **Sokoban setup:**
 - Objective: Push all boxes to target locations.
 - Environment: A grid-based puzzle with walls, boxes, and targets.
@@ -43,13 +49,13 @@ Angel Marchev Jr., Dimitar Lyubchev and Nikolay Penchev
 
 ## Reinforcement Learning 
 **Concept** - a type of machine learning where an agent learns to make decisions by taking actions in an environment to maximize cumulative rewards. Key components of RL include the agent, environment, states, actions, rewards, and policy.  
-– Agent: The learner or decision maker.  
-– Environment: Everything the agent interacts with.  
-– State St at time t: A representation of the current situation of the environment  
-– Action at at time t: A set of all possible moves the agent can make.  
-– Reward Rt at time t: Feedback from the environment to evaluate the action taken.  
-– Policy πθ parameterized by θ: The strategy that the agent employs to determine actions based on the current state.  
-– Policy update process πθ(St) -> πθ(St + 1) from state St to St + 1: The implemented change in the policy reflecting the previous states and rewards.  
+- Agent: The learner or decision maker.  
+- Environment: Everything the agent interacts with.  
+- State St at time t: A representation of the current situation of the environment  
+- Action at at time t: A set of all possible moves the agent can make.  
+- Reward Rt at time t: Feedback from the environment to evaluate the action taken.  
+- Policy πθ parameterized by θ: The strategy that the agent employs to determine actions based on the current state.  
+- Policy update process πθ(St) -> πθ(St + 1) from state St to St + 1: The implemented change in the policy reflecting the previous states and rewards.  
 
 ```mermaid
 %%{init: {"flowchart": {"defaultRenderer": "elk"}} }%%
@@ -122,6 +128,8 @@ graph TD
 ## NEAT implementation
 **current encoding**
 
+![](/img/Fig_2)
+
 **each NEAT configuration** file involves parameters, grouped into several categories:
 Algorithm (Hyper-) Parameters
 Genome Parameters
@@ -174,6 +182,9 @@ Threshold : 10 / 7
 – Species Influence: The number of species greatly influences behavior:  
   • Higher number of hidden nodes (and layers) proportionally increases the number of species.  
   • More hidden nodes lead to greater diversity and a higher chance of improving fitness scores and finding optimal solutions.  
+
+![](/img/fig_5)
+
 
 **software implementation** - critical insights from neat-python library:   
 – Speciation:  
