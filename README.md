@@ -11,23 +11,70 @@ This repository contains the code used to test the **Neuro-Evolution of Augmenti
 ## Project Structure
 
 ```bash
-.
+..
 ├── LICENSE                            # License for the project
 ├── README.md                          # This file
 ├── Testing_the_NEAT_Algorithm_on_a_PSPACE_Complete_Problem.pdf  # Research paper
-├── presentation.md                    # Presentation related to the paper
+├── presentation.md    
+├── sokoban_env.py                      # we need to override in gym-sokoban
+├── sokoban_notebooks/
 ├── neat_experiments/
-│   ├── config-feedforward              # NEAT config for feedforward networks
-│   ├── config-feedforward-2            # Additional NEAT configurations
+│   ├── config-feedforward              # NEAT config for feedforward networks [Refer to Paper Section 2.3]
+│   ├── config-feedforward-2            
 │   ├── config-feedforward-3
 │   ├── config-feedforward-4
-│   ├── neat-sokoban-v01-2.ipynb        # Jupyter notebook for NEAT experiments on Sokoban
+│   ├── neat-sokoban-v01-2.ipynb        # Jupyter notebook for NEAT experiments on Sokoban [Refer to Paper Section 2.2 and 2.3]
 │   └── visualize.py                    # Script for visualizing results
-├── sokoban_notebooks/
-│   ├── base_experiments/
-│   │   ├── dqn.ipynb                   # DQN experiment notebook
-│   │   ├── ppo_cnn_policy.ipynb        # PPO with CNN experiment notebook
-│   │   ├── ppo_defaults.ipynb          # PPO default configuration notebook
-│   │   ├── ppo_optimized.ipynb         # Optimized PPO experiment notebook
-│   │   └── q_learning.ipynb            # Q-Learning experiment notebook
-└── img/                                
+│   base_experiments/
+│   │   ├── dqn.ipynb                   # DQN experiment notebook [Refer to Paper Section 2.2]
+│   │   ├── ppo_cnn_policy.ipynb        # PPO with CNN experiment notebook [Refer to Paper Section 2.2]
+│   │   ├── ppo_defaults.ipynb          # PPO default configuration notebook [Refer to Paper Section 2.2]
+│   │   ├── ppo_optimized.ipynb         # Optimized PPO experiment notebook [Refer to Paper Section 2.2]
+│   │   ├── q_learning.ipynb            # Q-Learning experiment notebook [Refer to Paper Section 2.2]
+└── img/                                # Directory for storing experiment-related images
+```                           
+## Cloning and Modifying `gym-sokoban`
+
+In order to train the models on the same level consistently, you need to modify the `gym-sokoban` environment. Follow the steps below to clone the `gym-sokoban` repository and copy over the necessary changes.
+
+### Steps to Modify `gym-sokoban`
+
+1. **Clone the `gym-sokoban` Repository**:
+   
+   First, clone the official `gym-sokoban` repository:
+   
+   ```bash
+   git clone https://github.com/mpSchrader/gym-sokoban.git
+    cd gym-sokoban
+    pip install -e .
+   cp path/to/our/repo/sokoban_env.py path/to/gym-sokoban/gym_sokoban/envs/sokoban_env.py
+
+   ```
+
+## Conda Environment Setup
+
+This project requires Python dependencies to be installed in a controlled environment to ensure compatibility and reproducibility. We use **conda** to manage this environment. Below are the steps to set up the environment using the provided `sokoban-env.yml` file.
+
+### Why Conda?
+
+**Conda** is a powerful package and environment management system. It helps avoid conflicts between different packages and allows us to manage both Python and non-Python dependencies easily. For this project, using conda ensures that all dependencies, including `gym-sokoban` and `stable-baselines3`, are installed correctly and in a compatible way.
+
+### Steps to Set Up the Conda Environment
+
+1. **Install Conda**:
+   If you don't have Conda installed, you can install **Miniconda** or **Anaconda**:
+   
+   - **Miniconda** (lightweight version):
+     Download and install from [here](https://docs.conda.io/en/latest/miniconda.html).
+   
+   - **Anaconda** (full distribution):
+     Download and install from [here](https://www.anaconda.com/products/distribution).
+
+2. Then run 
+``` conda env create -f sokoban_env.yml```. Probably you'll be asked to run conda init
+3. To activate the conda env
+```commandline
+conda activate sokoban
+```
+4. Run ```jupyter lab``` and browse the notebooks
+
