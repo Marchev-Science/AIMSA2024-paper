@@ -4,6 +4,8 @@ Angel Marchev, Jr. (orcidID: 0000-0002-5090-3123)
 Dimitar Lyubchev (orcidID: 0009-0006-3970-6272)  
 Nikolay Penchev (orcidID: 0009-0000-8955-2474)  
 
+![](/img/solution_1.gif) &nbsp; &nbsp; &nbsp;   ![](/img/solution_2.gif)
+
 This repository contains the code used to test the **Neuro-Evolution of Augmenting Topologies (NEAT)** algorithm on a PSPACE-complete problem, specifically the Sokoban puzzle. The experiment is based on the study outlined in the paper:
 
 > [Testing the NEAT Algorithm on a PSPACE-Complete Problem](./Testing_the_NEAT_Algorithm_on_a_PSPACE_Complete_Problem.pdf).
