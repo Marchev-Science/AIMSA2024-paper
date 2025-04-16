@@ -8,7 +8,26 @@ This repository contains the code used to test the **Neuro-Evolution of Augmenti
 
 > [Testing the NEAT Algorithm on a PSPACE-Complete Problem](./Testing_the_NEAT_Algorithm_on_a_PSPACE_Complete_Problem.pdf).
 
+**Cite this paper**
 
+Marchev, A., Lyubchev, D., Penchev, N. (2025). Testing the NEAT Algorithm on a PSPACE-Complete Problem. In: Koprinkova-Hristova, P., Kasabov, N. (eds) Artificial Intelligence: Methodology, Systems, and Applications. AIMSA 2024. Lecture Notes in Computer Science(), vol 15462. Springer, Cham. https://doi.org/10.1007/978-3-031-81542-3_9
+
+```
+@InProceedings{10.1007/978-3-031-81542-3_9,
+author="Marchev, Angel
+and Lyubchev, Dimitar
+and Penchev, Nikolay",
+editor="Koprinkova-Hristova, Petia
+and Kasabov, Nikola",
+title="Testing the NEAT Algorithm on a PSPACE-Complete Problem",
+booktitle="Artificial Intelligence: Methodology, Systems, and Applications",
+year="2025",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="104--121",
+isbn="978-3-031-81542-3"
+}
+```
 ![](/img/solution_1.gif) &nbsp; &nbsp; &nbsp;   ![](/img/solution_2.gif)
 
 ## Project Structure
